@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+def project_list(request):
+    # template name
+    return render(request, 'budget/project-list.html'_)
+
+def project_detail(request, project_slug):
+    # fetch the correct project from urls
+    return render(request, 'budget/project-detail.html'_)
