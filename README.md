@@ -1,1 +1,2 @@
-# budget-app
+# Overview
+Simple budgeting application with Django.
