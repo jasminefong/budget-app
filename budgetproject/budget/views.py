@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Project
 
 def project_list(request):
     # template name
@@ -6,4 +7,7 @@ def project_list(request):
 
 def project_detail(request, project_slug):
     # fetch the correct project from urls
-    return render(request, 'budget/project-detail.html')
+
+    project = get_object_or_404(Project, slug=project_slug)
+    expense_list = project.expenses
+    return render(request, 'budget/project-detail.html', {'project': project, 'expense_list': project.expenses.all})

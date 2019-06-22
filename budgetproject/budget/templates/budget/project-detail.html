@@ -8,21 +8,21 @@
             <div class="col s12 m12 l4">
                 <div class="card-panel">
                     <h6 class="bold">Total Budget</h6>
-                    <h1>$3000</h1>
+                    <h1>${{ project.budget }}</h1>
                 </div>
             </div>
 
             <div class="col s12 m6 l4">
                     <div class="card-panel">
-                        <h6 class="bold">Total Budget</h6>
-                        <h1>$3000</h1>
+                        <h6 class="bold">Budget Left</h6>
+                        <h1>$...</h1>
                     </div>
             </div>
 
             <div class="col s12 m6 l4">
                     <div class="card-panel">
-                        <h6 class="bold">Total Budget</h6>
-                        <h1>$3000</h1>
+                        <h6 class="bold">Total Transactions</h6>
+                        <h1>$...</h1>
                     </div>
             </div>
 
@@ -39,95 +39,32 @@
             </div>
 
             <ul class="z-depth-1">
+
+                {% for expense in expense_list %}
+
                 <li>
                     <div class="card-panel z-depth-0 expense">
                         <div class="row">
                             <div class="col l6">
-                                <span class="title">Type of Expense</span>
+                                <span class="title">{{ expense.title }}</span>
                             </div>
-
+                            
                             <div class="col l3">
-                                    <span class="title">$$$</span>
+                                <span class="title">${{ expense.amount }}</span>
                             </div>
-
+                            
                             <div class="col 1">
-                                    <span class="title bold">Category</span>
+                                <span class="title bold">{{ expense.category.name }}</span>
                             </div>
-
+                            
                             <a href="" class="">
                                 <i class="material-icons red-text right">close</i>
                             </a>
                         </div>
                     </div>
                 </li>
-
-                <li>
-                    <div class="card-panel z-depth-0 expense">
-                        <div class="row">
-                            <div class="col l6">
-                                <span class="title">Type of Expense</span>
-                            </div>
-
-                            <div class="col l3">
-                                    <span class="title">$$$</span>
-                            </div>
-
-                            <div class="col 1">
-                                    <span class="title bold">Category</span>
-                            </div>
-
-                            <a href="" class="">
-                                <i class="material-icons red-text right">close</i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="card-panel z-depth-0 expense">
-                        <div class="row">
-                            <div class="col l6">
-                                <span class="title">Type of Expense</span>
-                            </div>
-
-                            <div class="col l3">
-                                    <span class="title">$$$</span>
-                            </div>
-
-                            <div class="col 1">
-                                    <span class="title bold">Category</span>
-                            </div>
-
-                            <a href="" class="">
-                                <i class="material-icons red-text right">close</i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                {% endfor %}
                 
-                <li>
-                    <div class="card-panel z-depth-0 expense">
-                        <div class="row">
-                            <div class="col l6">
-                                <span class="title">Type of Expense</span>
-                            </div>
-
-                            <div class="col l3">
-                                    <span class="title">$$$</span>
-                            </div>
-
-                            <div class="col 1">
-                                    <span class="title bold">Category</span>
-                            </div>
-
-                            <a href="" class="">
-                                <i class="material-icons red-text right">close</i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-    
-    
             </ul>
         </section>
 </div>
